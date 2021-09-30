@@ -1,0 +1,1080 @@
+local player = game.Players.LocalPlayer
+local MainGui = Instance.new("ScreenGui")
+local BackGround = Instance.new("Frame")
+local LeftSide = Instance.new("Frame")
+local AvatarFrame = Instance.new("Frame")
+local AvatarLab = Instance.new("ImageLabel")
+local AvatarNameLab = Instance.new("TextLabel")
+local WindowNameLab = Instance.new("TextLabel")
+local ModList = Instance.new("Frame")
+local CloneButCato = Instance.new("TextButton")
+local OutlineCato = Instance.new("TextLabel")
+local CatoFrames = Instance.new("Frame")
+local CatoFrameClone = Instance.new("ScrollingFrame")
+local ModuleClone = Instance.new("TextButton")
+local OpenCloseIndicator = Instance.new("TextLabel")
+local ModName = Instance.new("TextLabel")
+local ToggleHitbox = Instance.new("TextButton")
+local BackgroundTog = Instance.new("TextLabel")
+local TextLabel_Roundify_2px = Instance.new("ImageLabel")
+local SettingArea = Instance.new("Frame")
+local CloneFrame = Instance.new("Frame")
+local SetOpen = Instance.new("BoolValue")
+--Properties:
+local  letter = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"}
+
+function ranstring(leng)
+	
+	local stringg = ""
+	for i = 1,leng do
+		local a = math.random(1,#letter)
+		local k = math.random(1,2)
+		if k == 1 then
+			stringg = stringg..string.upper(letter[a])
+		else
+			stringg = stringg..letter[a]
+		end
+		
+		
+		
+	end
+	return stringg
+	
+end
+
+
+
+
+MainGui.Name = ranstring(15)
+MainGui.Parent = game.CoreGui
+MainGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+player.Chatted:connect(function(msg)
+	if msg == "kill" then
+		MainGui:Destroy()
+
+	end
+
+
+end)
+BackGround.Name = "BackGround"
+BackGround.Parent = CloneFrame
+BackGround.BackgroundColor3 = Color3.fromRGB(50, 53, 59)
+BackGround.BorderSizePixel = 0
+BackGround.Position = UDim2.new(0.328461289, 0, 0.258007109, 0)
+BackGround.Size = UDim2.new(0, 490, 0, 342)
+
+LeftSide.Name = "LeftSide"
+LeftSide.Parent = BackGround
+LeftSide.BackgroundColor3 = Color3.fromRGB(47, 49, 54)
+LeftSide.BorderSizePixel = 0
+LeftSide.Position = UDim2.new(-0.00147636572, 0, 0, 0)
+LeftSide.Size = UDim2.new(0, 117, 0, 342)
+
+
+AvatarFrame.Name = "AvatarFrame"
+AvatarFrame.Parent = LeftSide
+AvatarFrame.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+AvatarFrame.BorderSizePixel = 0
+AvatarFrame.Position = UDim2.new(0, 0, 0.921875, 0)
+AvatarFrame.Size = UDim2.new(0, 116, 0, 25)
+
+
+
+
+
+AvatarLab.Name = "AvatarLab"
+AvatarLab.Parent = AvatarFrame
+AvatarLab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AvatarLab.BorderSizePixel = 0
+AvatarLab.Position = UDim2.new(0, 0, 0, 1)
+AvatarLab.Size = UDim2.new(0, 26, 0, 26)
+
+
+
+
+AvatarNameLab.Name = "AvatarNameLab"
+AvatarNameLab.Parent = AvatarFrame
+AvatarNameLab.BackgroundColor3 = Color3.fromRGB(227, 227, 227)
+AvatarNameLab.BackgroundTransparency = 1.000
+AvatarNameLab.Position = UDim2.new(0.25, 0, 0, 0)
+AvatarNameLab.Size = UDim2.new(0, 88, 0, 25)
+AvatarNameLab.Font = Enum.Font.PatrickHand
+AvatarNameLab.Text = game.Players.LocalPlayer.Name
+AvatarNameLab.TextColor3 = Color3.fromRGB(255, 255, 255)
+AvatarNameLab.TextScaled = true
+AvatarNameLab.TextSize = 14.000
+AvatarNameLab.TextWrapped = true
+AvatarNameLab.TextXAlignment = Enum.TextXAlignment.Left
+
+
+WindowNameLab.Name = "WindowNameLab"
+WindowNameLab.Parent = LeftSide
+WindowNameLab.BackgroundColor3 = Color3.fromRGB(227, 227, 227)
+WindowNameLab.BackgroundTransparency = 1.000
+WindowNameLab.Size = UDim2.new(0, 107, 0, 54)
+WindowNameLab.Font = Enum.Font.PermanentMarker
+WindowNameLab.Text = "Project"
+WindowNameLab.TextColor3 = Color3.fromRGB(255, 255, 255)
+WindowNameLab.TextScaled = true
+WindowNameLab.TextSize = 14.000
+WindowNameLab.TextWrapped = true
+
+ModList.Name = "ModList"
+ModList.Parent = LeftSide
+ModList.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ModList.BackgroundTransparency = 1.000
+ModList.Position = UDim2.new(0, 0, 0.157894731, 0)
+ModList.Size = UDim2.new(0, 116, 0, 260)
+
+
+CloneButCato.Name = "CloneButCato"
+CloneButCato.Parent = CloneFrame
+CloneButCato.BackgroundColor3 = Color3.fromRGB(47, 49, 54)
+CloneButCato.BackgroundTransparency = 1.000
+CloneButCato.BorderSizePixel = 0
+CloneButCato.Position = UDim2.new(0.534482718, 0, 0.465384662, 0)
+CloneButCato.Size = UDim2.new(0, 116, 0, 24)
+CloneButCato.ZIndex = 3
+CloneButCato.Font = Enum.Font.SourceSans
+CloneButCato.Text = "Test!"
+CloneButCato.TextColor3 = Color3.fromRGB(103, 103, 104)
+CloneButCato.TextScaled = true
+CloneButCato.TextSize = 14.000
+CloneButCato.TextWrapped = true
+
+OutlineCato.Name = "OutlineCato"
+OutlineCato.Parent = ModList
+OutlineCato.BackgroundColor3 = Color3.fromRGB(66, 134, 245)
+OutlineCato.BorderSizePixel = 0
+OutlineCato.Position = UDim2.new(0, 0, 0.157894731, 0)
+OutlineCato.Size = UDim2.new(0, 117, 0, 24)
+OutlineCato.ZIndex = 2
+OutlineCato.Font = Enum.Font.SourceSans
+OutlineCato.Text = ""
+OutlineCato.TextColor3 = Color3.fromRGB(0, 0, 0)
+OutlineCato.TextSize = 14.000
+
+CatoFrames.Name = "CatoFrames"
+CatoFrames.Parent = BackGround
+CatoFrames.BackgroundColor3 = Color3.fromRGB(103, 103, 104)
+CatoFrames.BackgroundTransparency = 1.000
+CatoFrames.Position = UDim2.new(0.212765962, 0, 0, 0)
+CatoFrames.Size = UDim2.new(0, 370, 0, 320)
+
+CatoFrameClone.Name = "CatoFrameClone"
+CatoFrameClone.Parent = CloneFrame
+CatoFrameClone.Active = true
+CatoFrameClone.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CatoFrameClone.BackgroundTransparency = 1.000
+CatoFrameClone.Size = UDim2.new(0, 370, 0, 320)
+CatoFrameClone.BottomImage = ""
+CatoFrameClone.MidImage = ""
+CatoFrameClone.TopImage = ""
+CatoFrameClone.CanvasSize = UDim2.new(0,0,0,0)
+
+ModuleClone.Name = "ModuleClone"
+ModuleClone.Parent = CloneFrame
+ModuleClone.BackgroundColor3 = Color3.fromRGB(64, 68, 75)
+ModuleClone.BorderSizePixel = 0
+ModuleClone.Position = UDim2.new(0.110810816, 0, 0.0203125011, 0)
+ModuleClone.Size = UDim2.new(0, 313, 0, 50)
+ModuleClone.ZIndex = 2
+ModuleClone.Font = Enum.Font.SourceSans
+ModuleClone.Text = ""
+ModuleClone.TextColor3 = Color3.fromRGB(0, 0, 0)
+ModuleClone.TextSize = 14.000
+
+OpenCloseIndicator.Name = "OpenCloseIndicator"
+OpenCloseIndicator.Parent = ModuleClone
+OpenCloseIndicator.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OpenCloseIndicator.BackgroundTransparency = 1.000
+OpenCloseIndicator.BorderSizePixel = 0
+OpenCloseIndicator.Position = UDim2.new(0.840255618, 0, 0, 0)
+OpenCloseIndicator.Size = UDim2.new(0, 50, 0, 50)
+OpenCloseIndicator.ZIndex = 2
+OpenCloseIndicator.Font = Enum.Font.SourceSans
+OpenCloseIndicator.Text = "+"
+OpenCloseIndicator.TextColor3 = Color3.fromRGB(0, 0, 0)
+OpenCloseIndicator.TextScaled = true
+OpenCloseIndicator.TextSize = 14.000
+OpenCloseIndicator.TextWrapped = true
+
+ModName.Name = "ModName"
+ModName.Parent = ModuleClone
+ModName.BackgroundColor3 = Color3.fromRGB(227, 227, 227)
+ModName.BackgroundTransparency = 1.000
+ModName.BorderSizePixel = 0
+ModName.Position = UDim2.new(0.025559105, 0, 0, 0)
+ModName.Size = UDim2.new(0, 220, 0, 50)
+ModName.ZIndex = 2
+ModName.Font = Enum.Font.SourceSans
+ModName.Text = "Aimbot"
+ModName.TextColor3 = Color3.fromRGB(227, 227, 227)
+ModName.TextScaled = true
+ModName.TextSize = 14.000
+ModName.TextWrapped = true
+ModName.TextXAlignment = Enum.TextXAlignment.Left
+
+
+SettingArea.Name = "SettingArea"
+SettingArea.Parent = ModuleClone
+SettingArea.BackgroundColor3 = Color3.fromRGB(64, 68, 75)
+SettingArea.BorderColor3 = Color3.fromRGB(66, 134, 245)
+SettingArea.BorderSizePixel = 2
+SettingArea.Position = UDim2.new(0, 0, 0.0599999987, 0)
+	
+ SettingArea.Size = UDim2.new(0, 313, 0, 47)
+
+SettingArea.Visible = false
+
+CloneFrame.Name = "CloneFrame"
+CloneFrame.Parent = MainGui
+CloneFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CloneFrame.Size = UDim2.new(0, 138, 0, 126)
+CloneFrame.Visible = false
+
+
+BackGround.Active = true
+BackGround.Draggable = true
+SetOpen.Parent = ModuleClone
+SetOpen.Name = "SetOpen"
+
+
+
+
+local NoSetLab = Instance.new("TextLabel")
+
+NoSetLab.Name = "NoSetLab"
+NoSetLab.Parent = SettingArea
+NoSetLab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NoSetLab.BackgroundTransparency = 1.000
+NoSetLab.BorderColor3 = Color3.fromRGB(27, 42, 53)
+NoSetLab.Position = UDim2.new(0.025559105, 0, 0.493506491, 0)
+NoSetLab.Size = UDim2.new(0, 133, 0, 30)
+NoSetLab.ZIndex = 2
+NoSetLab.Font = Enum.Font.SourceSans
+NoSetLab.Text = "No Settings!"
+NoSetLab.TextColor3 = Color3.fromRGB(227, 227, 227)
+NoSetLab.TextScaled = true
+NoSetLab.TextSize = 14.000
+NoSetLab.TextWrapped = true
+
+
+
+
+local Toggle = Instance.new("BoolValue")
+
+Toggle.Parent = ModuleClone
+Toggle.Name = "Toggle"
+
+
+
+
+
+
+ToggleHitbox.Name = "ToggleHitbox"
+ToggleHitbox.Parent =ModuleClone
+ToggleHitbox.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+ToggleHitbox.BorderSizePixel = 0
+ToggleHitbox.Position = UDim2.new(0.727999985, 0, 0.400000006, 0)
+ToggleHitbox.Size = UDim2.new(0, 43, 0, 15)
+ToggleHitbox.ZIndex = 2
+ToggleHitbox.Font = Enum.Font.SourceSans
+ToggleHitbox.Text = ""
+ToggleHitbox.TextColor3 = Color3.fromRGB(0, 0, 0)
+ToggleHitbox.TextSize = 14.000
+
+BackgroundTog.Name = "Background"
+BackgroundTog.Parent = ToggleHitbox
+BackgroundTog.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BackgroundTog.BackgroundTransparency = 1.000
+BackgroundTog.Size = UDim2.new(1, 0, 0.928571403, 0)
+BackgroundTog.Font = Enum.Font.SourceSans
+BackgroundTog.Text = ""
+BackgroundTog.TextColor3 = Color3.fromRGB(0, 0, 0)
+BackgroundTog.TextSize = 14.000
+
+TextLabel_Roundify_2px.Name = "TextLabel_Roundify_2px"
+TextLabel_Roundify_2px.Parent = BackgroundTog
+TextLabel_Roundify_2px.AnchorPoint = Vector2.new(0.5, 0.5)
+TextLabel_Roundify_2px.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_Roundify_2px.BackgroundTransparency = 1.000
+TextLabel_Roundify_2px.Position = UDim2.new(0.5, 0, 0.484992266, 0)
+TextLabel_Roundify_2px.Size = UDim2.new(1, 0, 1.07179487, 0)
+TextLabel_Roundify_2px.Image = "rbxassetid://3570695787"
+TextLabel_Roundify_2px.ScaleType = Enum.ScaleType.Slice
+TextLabel_Roundify_2px.SliceCenter = Rect.new(100, 100, 100, 100)
+TextLabel_Roundify_2px.SliceScale = 0.167
+
+
+
+
+
+
+local BoolSubFrameClone = Instance.new("Frame")
+local BoolSubLab = Instance.new("TextLabel")
+local BoolButFrame = Instance.new("Frame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local BoolButClone = Instance.new("TextButton")
+local ButImageBool = Instance.new("ImageLabel")
+local ButLab = Instance.new("TextLabel")
+
+BoolSubFrameClone.Name = "BoolSubFrameClone"
+BoolSubFrameClone.Parent = CloneFrame
+BoolSubFrameClone.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BoolSubFrameClone.BackgroundTransparency = 1.000
+BoolSubFrameClone.Position = UDim2.new(0.0228013024, 0, 0.382113814, 0)
+BoolSubFrameClone.Size = UDim2.new(0, 291, 0, 51)
+
+BoolSubLab.Name = "BoolSubLab"
+BoolSubLab.Parent = BoolSubFrameClone
+BoolSubLab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BoolSubLab.BackgroundTransparency = 1.000
+BoolSubLab.Size = UDim2.new(0, 300, 0, 28)
+BoolSubLab.Font = Enum.Font.SourceSans
+BoolSubLab.Text = "Aimbot"
+BoolSubLab.TextColor3 = Color3.fromRGB(227, 227, 227)
+BoolSubLab.TextScaled = true
+BoolSubLab.TextSize = 14.000
+BoolSubLab.TextWrapped = true
+BoolSubLab.TextXAlignment = Enum.TextXAlignment.Left
+
+BoolButFrame.Name = "ButFrame"
+BoolButFrame.Parent = BoolSubFrameClone
+BoolButFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BoolButFrame.BackgroundTransparency = 1.000
+BoolButFrame.Position = UDim2.new(0, 0, 0.558069348, 0)
+BoolButFrame.Size = UDim2.new(0, 291, 0, 22)
+
+UIGridLayout.Parent = BoolButFrame
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellPadding = UDim2.new(0, 0, 0, 0)
+UIGridLayout.CellSize = UDim2.new(0, 97, 0, 22)
+UIGridLayout.FillDirectionMaxCells = 3
+
+BoolButClone.Name = "BoolButClone"
+BoolButClone.Parent = CloneFrame
+BoolButClone.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BoolButClone.BackgroundTransparency = 1.000
+BoolButClone.Position = UDim2.new(0.704866111, 0, -1, 0)
+BoolButClone.Size = UDim2.new(0, 125, 0, 22)
+BoolButClone.Font = Enum.Font.PermanentMarker
+BoolButClone.Text = ""
+BoolButClone.TextColor3 = Color3.fromRGB(0, 0, 0)
+BoolButClone.TextSize = 14.000
+BoolButClone.TextXAlignment = Enum.TextXAlignment.Left
+
+ButImageBool.Name = "ButImageBool"
+ButImageBool.Parent = BoolButClone
+ButImageBool.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ButImageBool.BackgroundTransparency = 1.000
+ButImageBool.BorderSizePixel = 0
+ButImageBool.Size = UDim2.new(0, 22, 0, 22)
+
+ButLab.Name = "ButLab"
+ButLab.Parent = BoolButClone
+ButLab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ButLab.BackgroundTransparency = 1.000
+ButLab.Position = UDim2.new(0.226804122, 0, 0, 0)
+ButLab.Size = UDim2.new(0, 75, 0, 22)
+ButLab.Font = Enum.Font.SourceSansItalic
+ButLab.Text = "u forgor"
+ButLab.TextColor3 = Color3.fromRGB(227, 227, 227)
+ButLab.TextScaled = true
+ButLab.TextSize = 14.000
+ButLab.TextWrapped = true
+
+ButLab.Size = UDim2.new(0, 69, 0, 22)
+ButLab.TextXAlignment = Enum.TextXAlignment.Left
+
+local FrameType = Instance.new("StringValue")
+
+FrameType.Parent = BoolSubFrameClone
+FrameType.Name = "FrameType"
+FrameType.Value = "bool"
+
+
+local NumVal = Instance.new("NumberValue")
+local SliderFrameBut = Instance.new("Frame")
+local SliderFrame = Instance.new("Frame")
+local BlueBack = Instance.new("Frame")
+local SlideBut = Instance.new("TextButton")
+local SlideNumLab = Instance.new("TextLabel")
+
+SliderFrameBut.Name = "SliderFrameBut"
+SliderFrameBut.Parent = CloneFrame
+SliderFrameBut.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SliderFrameBut.BackgroundTransparency = 1.000
+SliderFrameBut.Position = UDim2.new(0, 0, 0.714932024, 0)
+SliderFrameBut.Size = UDim2.new(0, 291, 0, 19)
+
+SliderFrame.Name = "SliderFrame"
+SliderFrame.Parent = SliderFrameBut
+SliderFrame.BackgroundColor3 = Color3.fromRGB(50, 53, 59)
+SliderFrame.BorderSizePixel = 0
+SliderFrame.Size = UDim2.new(1, 0, 0.3, 0)
+SliderFrame.Position = UDim2.new(0, 0,0.6, 0)
+SliderFrame.ZIndex = 2
+BlueBack.Name = "BlueBack"
+BlueBack.Parent = SliderFrame
+BlueBack.BackgroundColor3 = Color3.fromRGB(66, 134, 245)
+BlueBack.BorderSizePixel = 0
+BlueBack.Size = UDim2.new(0, 0, 0, 37)
+NumVal.Parent = SliderFrame
+NumVal.Name = "NumVal"
+NumVal.Value = 0
+SlideBut.Name = "SlideBut"
+SlideBut.Parent = SliderFrame
+SlideBut.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SlideBut.BackgroundTransparency = 1.000
+SlideBut.Position = UDim2.new(-3.52173402e-08, 0, 0, 0)
+SlideBut.Size = UDim2.new(1, 0, 1, 0)
+SlideBut.Font = Enum.Font.SourceSans
+SlideBut.Text = ""
+SlideBut.TextColor3 = Color3.fromRGB(0, 0, 0)
+SlideBut.TextSize = 14.000
+
+SlideNumLab.Name = "SlideNumLab"
+SlideNumLab.Parent = SliderFrame
+SlideNumLab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SlideNumLab.BackgroundTransparency = 1.000
+SlideNumLab.Position = UDim2.new(0.759, 0, -1.34, 0)
+SlideNumLab.Size = UDim2.new(0, 69, 0, 25)
+SlideNumLab.Font = Enum.Font.SourceSans
+SlideNumLab.Text = "0"
+SlideNumLab.TextColor3 = Color3.fromRGB(66, 134, 245)
+SlideNumLab.TextScaled = true
+SlideNumLab.TextSize = 14.000
+SlideNumLab.TextWrapped = true
+
+
+
+
+
+
+local StatWinClone = Instance.new("Frame")
+local StatListArea = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local CloneStatLab = Instance.new("TextLabel")
+local StatWinLab = Instance.new("TextLabel")
+local StatVal = Instance.new("StringValue")
+
+
+StatWinClone.Name = "StatWinClone"
+StatWinClone.Parent = CloneFrame
+StatWinClone.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StatWinClone.Position = UDim2.new(0.150304079, 0, 0.27935943, 0)
+StatWinClone.Size = UDim2.new(0, 130, 0, 17)
+
+StatListArea.Name = "StatListArea"
+StatListArea.Parent = StatWinClone
+StatListArea.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StatListArea.BackgroundTransparency = 1.000
+StatListArea.Position = UDim2.new(0, 0, 1, 0)
+StatListArea.Size = UDim2.new(0, 130, 0, 21)
+
+UIListLayout.Parent = StatListArea
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+CloneStatLab.Name = "CloneStatLab"
+CloneStatLab.Parent = CloneFrame
+CloneStatLab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CloneStatLab.BackgroundTransparency = 0.550
+CloneStatLab.BorderSizePixel = 0
+CloneStatLab.Position = UDim2.new(-0.215384617, 0, 2.5, 0)
+CloneStatLab.Size = UDim2.new(0, 130, 0, 20)
+CloneStatLab.Font = Enum.Font.SourceSans
+CloneStatLab.TextColor3 = Color3.fromRGB(0, 0, 0)
+CloneStatLab.TextScaled = true
+CloneStatLab.TextSize = 14.000
+CloneStatLab.TextWrapped = true
+
+StatWinLab.Name = "StatWinLab"
+StatWinLab.Parent = StatWinClone
+StatWinLab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StatWinLab.Size = UDim2.new(0, 130, 0, 17)
+StatWinLab.Font = Enum.Font.SourceSans
+StatWinLab.TextColor3 = Color3.fromRGB(0, 0, 0)
+StatWinLab.TextScaled = true
+StatWinLab.TextSize = 14.000
+StatWinLab.TextWrapped = true
+StatVal.Parent = CloneStatLab
+StatVal.Name = "Value"
+StatVal.Value = ""
+
+
+
+
+
+
+
+
+
+
+
+
+local idlist = {
+	BoolOff = "rbxassetid://7549284525",
+	BoolOn = "rbxassetid://7549498357",
+	ModeOn = "rbxassetid://7555446745",
+	ModeOff = "rbxassetid://7555450332"
+	
+	
+}
+
+local colourlist = {
+	white = Color3.fromRGB(227, 227, 227),
+	blue = Color3.fromRGB(66, 134, 245)
+	
+	
+}
+
+ButImageBool.Image = idlist.BoolOff
+
+
+
+
+
+local binds = {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function createWin(Name)
+	if MainGui:FindFirstChild(Name) then
+		return MainGui[Name].LeftSide.ModList
+	end
+	local clone = BackGround:Clone()
+	clone.Parent = MainGui
+	clone.Name = Name
+	clone.LeftSide.WindowNameLab.Text = Name
+	
+	
+	local function getThumb()
+		local content, isready = game:GetService("Players"):GetUserThumbnailAsync(game.Players.LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+		while not isready do
+			if isready then
+				break
+			end
+			wait()
+		end
+		clone.LeftSide.AvatarFrame.AvatarLab.Image = content
+		clone.LeftSide.AvatarLab.BackgroundTransparency = 1
+	end
+	coroutine.wrap(getThumb)()
+
+	
+	return clone.LeftSide.ModList
+	
+end
+
+function createCato(Win,Name)
+	if Win.Parent.Parent.CatoFrames:FindFirstChild(Name) then
+		return Win.Parent.Parent.CatoFrames[Name]
+		
+	end
+	
+	local clone = CloneButCato:Clone()
+	
+	clone.Parent = Win
+	clone.Name = Name
+	clone.Text = Name
+	clone.Position = UDim2.new(0,0,0,0 + #Win.Parent.Parent.CatoFrames:GetChildren() * clone.Size.Y.Offset)
+	local clone2 = CatoFrameClone:Clone()
+	clone2.Parent = Win.Parent.Parent.CatoFrames
+	
+	
+	
+	clone2.Name = Name
+	if #Win:GetChildren() == 2 then
+		Win.OutlineCato.Position = clone.Position
+		clone2.Visible = true
+	else
+		clone2.Visible = false
+	end
+	local function catoclick()
+		clone.MouseButton1Click:connect(function()
+			Win.OutlineCato:TweenPosition(clone.Position,Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.3,true)
+			for i,v in pairs(Win.Parent.Parent.CatoFrames:GetChildren()) do
+				if v.Name ~= Name then
+					v.Visible = false
+				else
+					v.Visible = true
+				end
+			end
+		end)
+	end
+	coroutine.wrap(catoclick)()
+	
+	
+	
+	return clone2
+	
+	
+end
+local UIS = game:GetService("UserInputService")
+function createMod(Cato,Name,Bind,Callback)
+	if Cato:FindFirstChild(Name) then
+		return Cato[Name]
+	end
+	if tostring(type(Bind)) ~= "userdata" then
+		print(tostring(type(Bind)))
+		Bind = Enum.KeyCode.F15
+	end
+	binds = binds or Enum.KeyCode.F15
+	local bindname =  Name:gsub("%s+", "")
+	binds[string.lower(bindname)] = Bind
+	Callback = Callback or function() end
+	if tostring(type(Callback)) ~= "function" then
+		print("Funciton not found setting to Nothing!")
+		Callback = function() end
+	end
+	
+	local clone = ModuleClone:Clone()
+	clone.Parent = Cato
+	clone.LayoutOrder = #Cato:GetChildren()
+	clone.Name = Name
+	local modoffset = 20
+	clone.SettingArea.Size =  UDim2.new(0, 313, 0, 77)
+	for i,v in pairs(Cato:GetChildren()) do
+		if v.LayoutOrder < clone.LayoutOrder then
+			clone.Position = v.Position + UDim2.new(0,0,0,0 + (clone.Size.Y.Offset + modoffset))
+		end
+ 		
+	end
+	Cato.CanvasSize = Cato.CanvasSize + UDim2.new(0,0,0,0 + clone.Size.Y.Offset + 25)
+	clone.ModName.Text = Name
+	local NumVal = Instance.new("NumberValue")
+	NumVal.Name = "NumVal"
+	NumVal.Value = clone.Position.Y.Offset + 20
+	NumVal.Parent = clone
+	local function openset()
+		clone.MouseButton1Click:connect(function()
+			if clone.SetOpen.Value == false then
+				for i,v in pairs(Cato:GetChildren()) do
+					v.SetOpen.Value = false
+					v.OpenCloseIndicator.Text = "+"
+				end
+				clone.SetOpen.Value = true
+				clone.OpenCloseIndicator.Text = "~"
+			else
+				clone.SetOpen.Value = false
+				clone.OpenCloseIndicator.Text = "+"
+			end
+			
+		end)
+		clone.SetOpen.Changed:connect(function()
+			local setoffset = clone.SettingArea.Size.Y.Offset
+			
+			if clone.SetOpen.Value == true then
+				Cato.CanvasSize = Cato.CanvasSize  + UDim2.new(0,0,0,0 + (setoffset - SettingArea.Size.Y.Offset))
+				for i,v in pairs(Cato:GetChildren()) do
+					if v.LayoutOrder > clone.LayoutOrder then
+						clone.SettingArea.Visible = true
+						v:TweenPosition(v.Position + UDim2.new(0,0,0,0 + (setoffset - SettingArea.Size.Y.Offset)),Enum.EasingDirection.In,Enum.EasingStyle.Sine,0.1,true)
+						--v.Position = v.Position + UDim2.new(0,0,0,0 + (setoffset - SettingArea.Size.Y.Offset))
+					end
+				end
+				clone.SettingArea.Visible = true
+			else
+				Cato.CanvasSize = Cato.CanvasSize  - UDim2.new(0,0,0,0 + (setoffset - SettingArea.Size.Y.Offset))
+				for i,v in pairs(Cato:GetChildren()) do
+					if v.LayoutOrder > clone.LayoutOrder then
+						v.Position = v.Position + UDim2.new(0,0,0,0 - (setoffset - SettingArea.Size.Y.Offset))
+						
+
+					end
+				end
+				clone.SettingArea.Visible = false
+			end
+			
+		end)
+		
+	end
+	coroutine.wrap(openset)()
+	local function togclicked()
+		UIS.InputBegan:connect(function(k,gpe)
+			if not gpe then
+				if k.KeyCode == binds[string.lower(bindname)] then
+					print(k.KeyCode)
+					clone.Toggle.Value = not clone.Toggle.Value
+				end
+			end
+		end)
+		
+		clone.Toggle.Changed:connect(function()
+			if clone.Toggle.Value == true then
+				clone.ModName.TextColor3 = colourlist.blue
+				
+				
+				local e,r = pcall(Callback,true)
+				if r then print(r.."  Error message for "..clone.Name) end
+			elseif clone.Toggle.Value == false then
+				
+				
+				clone.ModName.TextColor3 = colourlist.white
+				
+				local e,r = pcall(Callback,false)
+				if r then print(r.."  Error message for "..clone.Name) end
+			end
+		end)
+		clone.ToggleHitbox.MouseButton1Click:connect(function()
+			clone.Toggle.Value = not clone.Toggle.Value
+			
+		end)
+		
+		
+		
+		
+		
+	end
+	coroutine.wrap(togclicked)()
+	
+	return clone
+end
+
+
+function createSub(Mod,Name,Type)
+	if Mod:FindFirstChild(Name) then
+		return Mod[Name].ButFrame
+	end
+	if Mod == nil then
+		print("Assign a mod dumb fuck")
+		return
+	end
+	Name = Name or "Forgor name loool"
+	Type = Type or "bool"
+
+		local clone = BoolSubFrameClone:Clone()
+		clone.Parent = Mod.SettingArea
+		clone.Name = Name
+		clone.BoolSubLab.Text = Name
+		clone.FrameType.Value = string.lower(Type)
+		local holdval1 = 0
+		if Mod.SettingArea:FindFirstChild("NoSetLab") then
+
+			Mod.SettingArea.Size = Mod.SettingArea.Size + UDim2.new(0,0,0,0 + clone.Size.Y.Offset)
+			clone.Position = UDim2.new(0.0228013024,0,0,0 + (Mod.Size.Y.Offset))
+			Mod.SettingArea.NoSetLab:Destroy()
+			
+			
+		else
+		holdval1 = #Mod.SettingArea:GetChildren() - 1
+		local hold = nil
+		for i,v in pairs(Mod.SettingArea:GetChildren()) do
+			if hold == nil then
+				hold = v
+			elseif v.AbsolutePosition.Y > hold.AbsolutePosition.Y then
+				hold = v
+			end
+			
+		end
+			Mod.SettingArea.Size = Mod.SettingArea.Size + UDim2.new(0,0,0,0 + clone.Size.Y.Offset)
+			clone.Position = UDim2.new(0.0228013024,0,0,0 + hold.Position.Y.Offset + clone.Size.Y.Offset)
+		end
+		return clone
+		
+		
+		
+		
+		
+
+	
+	
+end
+
+
+function createBut(Sub,Name,callback,...)
+	local args = {...}
+	if Sub:FindFirstChild(Name) then
+		return Sub[Name].BoolButTogVal
+	end
+	callback = callback or function() end
+	Name = Name or "U FORGOR NAME DUMBASS"
+	if not Sub then
+		print("U FORGOT A FUCKING SUB RETARD")
+		return "retard"
+	end
+	
+	if Sub.FrameType.Value == "bool" then
+		local BoolButTogVal = Instance.new("BoolValue")
+
+		BoolButTogVal.Name = "BoolButTogVal"
+		BoolButTogVal.Parent = BoolButClone
+		BoolButTogVal.Value = false
+
+		local clone = BoolButClone:Clone()
+		
+		clone.Parent = Sub.ButFrame
+		clone.Name = Name
+		clone.ButLab.Text = Name
+		for i,v in pairs(Sub.Parent.Parent.SettingArea:GetChildren()) do
+			print(tostring(v).." Lemond")
+		end
+		if #clone.Parent:GetChildren()% 4 == 0 then
+			Sub.ButFrame.Size = Sub.ButFrame.Size + UDim2.new(0,0,0,BoolButFrame.Size.Y.Offset)
+			for i,v in pairs(Sub.Parent.Parent.SettingArea:GetChildren()) do
+				if v.AbsolutePosition.Y > Sub.AbsolutePosition.Y then
+					v.Position = v.Position + UDim2.new(0,0,0, BoolButFrame.Size.Y.Offset)
+				end
+			end
+		end
+		local function togclick()
+			clone.MouseButton1Click:connect(function()
+				BoolButTogVal.Value = not BoolButTogVal.Value
+				
+			end)
+			BoolButTogVal.Changed:connect(function()
+				if BoolButTogVal.Value == true then
+					clone.ButImageBool.Image = idlist.BoolOn
+					clone.ButLab.TextColor3 = colourlist.blue
+					
+					local e,r = pcall(callback,true)
+					if r then print(r) end
+					
+				elseif BoolButTogVal.Value == false then
+					clone.ButImageBool.Image = idlist.BoolOff
+					clone.ButLab.TextColor3 = colourlist.white
+					local e,r = pcall(callback,false)
+					if r then print(r) end
+				end
+				
+				
+			end)
+			
+		end
+		coroutine.wrap(togclick)()
+		return clone.BoolButTogVal
+	elseif 	Sub.FrameType.Value == "mode" then
+		local BoolButTogVal = Instance.new("StringValue")
+
+		BoolButTogVal.Name = "BoolButTogVal"
+		BoolButTogVal.Parent = BoolButClone
+		BoolButTogVal.Value = ""
+
+
+		for i,v in pairs(args) do
+			
+			local clone = BoolButClone:Clone()
+			clone.Parent = Sub.ButFrame
+			clone.Name = v
+			clone.ButLab.Text = v
+			clone.ButImageBool.Image = idlist.ModeOff
+			if i == 1 then
+				BoolButTogVal.Value = v
+				Sub.ButFrame[BoolButTogVal.Value].ButLab.TextColor3 = Color3.fromRGB(66, 134, 245)
+				Sub.ButFrame[BoolButTogVal.Value].ButImageBool.Image = idlist.ModeOn
+			end
+			local function togmode()
+				
+				clone.MouseButton1Click:connect(function()
+					BoolButTogVal.Value = v
+				end)
+				
+				BoolButTogVal.Changed:connect(function()
+					
+					for i,v2 in pairs(Sub.ButFrame:GetChildren()) do
+						if v2.Name ~= "UIGridLayout" then
+							v2.ButLab.TextColor3 = colourlist.white
+							v2.ButImageBool.Image = idlist.ModeOff
+						end
+					end
+					
+					Sub.ButFrame:WaitForChild(BoolButTogVal.Value).ButLab.TextColor3 = Color3.fromRGB(66, 134, 245)
+					Sub.ButFrame[BoolButTogVal.Value].ButImageBool.Image = idlist.ModeOn
+					
+					if BoolButTogVal.Value == v then 
+						local e,r = pcall(callback,v)
+						if r then print(r) end
+					end
+					
+				end)
+				
+			end
+			coroutine.wrap(togmode)()
+			
+			
+		end
+		
+	elseif 	Sub.FrameType.Value == "slider" then
+		
+	end
+	
+end
+
+
+function createSlide(Sub,Name,inc,min,max,callback)
+	callback = callback or function() end
+	for i,v in pairs(Sub:GetChildren()) do
+		print(v)
+
+	end
+	
+
+
+	Sub.ButFrame:Destroy()
+	local clone = SliderFrame:Clone()
+	clone.Parent = Sub
+	
+	local function slideclick()
+		local FOVDragging = false
+
+
+
+		clone.NumVal.Value = min
+		clone.SlideNumLab.Text = clone.NumVal.Value
+
+		if inc ~= 1 then
+			max = max / inc
+			min = min / inc
+			max = max - min
+		else
+			max = max / inc
+			min = min / inc
+			max = max - min	
+		end
+		local UIS = game:GetService("UserInputService")
+		local sliderButton = clone.SlideBut
+
+
+
+		sliderButton.MouseButton1Down:connect(function()
+			FOVDragging = true
+			local mouseLoc = UIS:GetMouseLocation() 
+			local relativePos = mouseLoc - clone.AbsolutePosition
+			local percentage = math.clamp(relativePos.X/clone.AbsoluteSize.X,0,1)
+			clone.BlueBack.Size = UDim2.new(percentage,0,1,0)
+			local k = math.round(percentage * max)
+			clone.NumVal.Value = k  * inc
+			clone.SlideNumLab.Text = clone.NumVal.Value
+			pcall(callback, clone.NumVal.Value)
+		end)
+		UIS.InputEnded:connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then
+				FOVDragging = false
+
+			end
+
+		end)
+
+		UIS.InputChanged:connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement then
+				if FOVDragging == true then
+					local mouseLoc = UIS:GetMouseLocation() 
+					local relativePos = mouseLoc - clone.AbsolutePosition
+					local percentage = math.clamp(relativePos.X/clone.AbsoluteSize.X,0,1)
+					clone.BlueBack.Size = UDim2.new(percentage,0,1,0)
+					local k = math.round(percentage * max)  + min
+					clone.NumVal.Value = k  * inc
+					clone.NumVal.Value = clone.NumVal.Value
+					local player = game.Players.LocalPlayer
+		
+					clone.SlideNumLab.Text = clone.NumVal.Value
+
+					pcall(callback, clone.NumVal.Value)
+				end
+			end
+
+		end)
+		clone.NumVal.Changed:connect(function()
+			clone.SlideNumLab.Text = clone.NumVal.Value
+			
+		end)
+
+
+	end
+	coroutine.wrap(slideclick)()
+	return clone.NumVal
+	
+end
+
+
+
+function createStatWin(Name)
+	if MainGui:FindFirstChild(Name) then
+		return MainGui[Name]
+		
+	end
+	local clone = StatWinClone:Clone()
+	clone.Name = Name
+	clone.Parent = MainGui
+	clone.StatWinLab.Text = Name
+	clone.BackgroundTransparency = 0.550
+	clone.StatWinLab.BackgroundTransparency = 1
+	clone.BorderSizePixel = 0
+	clone.Active = true
+	clone.Draggable = true
+	return clone
+	
+end
+
+
+function createStatLab(Stat,StartText,StartVal)
+	if MainGui:FindFirstChild(StartText) then
+		return Stat[StartText].Value	
+	end
+	local clone = CloneStatLab:Clone()
+	clone.Parent = Stat.StatListArea
+	clone.Value.Value = tostring(StatVal)
+	clone.Name = StartText  
+	clone.Text = StartText..": "..tostring(StartVal)
+	local function statchanged()
+		clone.Value.Changed:connect(function()
+			clone.Text =  StartText..": "..tostring(clone.Value.Value)
+		end)
+	end
+	coroutine.wrap(statchanged)()
+	return clone.Value
+end
+
+function command(msg)
+	local binding = false
+	local binding2 = false
+	local bindinghold = nil
+	local changespeed = false
+	local changespeed2 = false
+	local holdplayername = nil
+	for token in string.gmatch(msg, "[^%s]+") do
+		print(token)
+		local tok = string.lower(token)
+		if token == ".bind" then
+			binding = true
+			print("W")
+		elseif binding == true then
+			if binds[tok] ~= nil then
+				print("D")
+				binding = false
+				binding2 = true
+				bindinghold = tok
+			end
+		elseif binding2 == true then
+			print("K")
+			binding2 = false
+			binds[bindinghold] = Enum.KeyCode[string.upper(tok)]
+			bindinghold = nil
+			for i,v in pairs(binds) do
+				print(i)
+				print(v)
+
+			end
+		end	
+	end
+end
+player.Chatted:connect(command)
