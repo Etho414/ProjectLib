@@ -1056,24 +1056,16 @@ function command(msg)
 		local tok = string.lower(token)
 		if token == ".bind" then
 			binding = true
-			print("W")
 		elseif binding == true then
 			if binds[tok] ~= nil then
-				print("D")
 				binding = false
 				binding2 = true
 				bindinghold = tok
 			end
 		elseif binding2 == true then
-			print("K")
 			binding2 = false
 			binds[bindinghold] = Enum.KeyCode[string.upper(tok)]
 			bindinghold = nil
-			for i,v in pairs(binds) do
-				print(i)
-				print(v)
-
-			end
 		end	
 	end
 end
