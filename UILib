@@ -557,7 +557,7 @@ local binds = {}
 
 
 
-function createWin(Name)
+function createWin(Name,bind)
 	if MainGui:FindFirstChild(Name) then
 		return MainGui[Name].LeftSide.ModList
 	end
@@ -579,8 +579,15 @@ function createWin(Name)
 		clone.LeftSide.AvatarLab.BackgroundTransparency = 1
 	end
 	coroutine.wrap(getThumb)()
+    local function bindclick()
+        game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+            if input.KeyCode == bind then
+                clone.Visible = not clone.Visible
+            end
+        end)
 
-	
+    end
+	coroutine.wrap(bindclick)()
 	return clone.LeftSide.ModList
 	
 end
