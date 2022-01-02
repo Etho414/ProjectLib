@@ -1,15 +1,4 @@
 
--- Set to false if you want stand arrows
-
-_G.GiftMode = true
--- Show amount of items used 
-_G.CheckTimesUsed = false
--- Change the bind
-local UseBind = "X"
--- Makes it so you only have to press 1 button
-_G.OneButton = true
-
-
 
 
 
