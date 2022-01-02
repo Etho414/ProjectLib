@@ -67,6 +67,9 @@ local function event4()
                         trys = trys + 1
                         if trys == 200 then 
                             nomoneylab.Text = "Error during GIFT loop maybe no money?"
+                            nomoneylab.Visible = true
+                        wait(3)
+                        nomoneylab.Visible = false
                             break
                         end
                         if player.Backpack:FindFirstChild("Gift") then
@@ -102,6 +105,9 @@ local function event4()
                         trys = trys + 1
                         if trys == 200 then 
                             nomoneylab.Text = "Error during STAND ARROW loop maybe no money?"
+                            nomoneylab.Visible = true
+                        wait(3)
+                        nomoneylab.Visible = false
                             break
                         end
                         if player.Backpack:FindFirstChild("Stand Arrow") then
@@ -158,6 +164,9 @@ uis.InputBegan:connect(function(k,gpe)
                     trys = trys + 1
                     if trys == 200 then 
                         nomoneylab.Text = "Error during ROKAKAKA loop maybe no money?"
+                        nomoneylab.Visible = true
+                        wait(3)
+                        nomoneylab.Visible = false
                         break
                     end
                     if player.Backpack:FindFirstChild("Rokakaka Fruit") then 
