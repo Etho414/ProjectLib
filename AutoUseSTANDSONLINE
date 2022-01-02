@@ -126,7 +126,7 @@ uis.InputBegan:connect(function(k,gpe)
 
    
     if player.Character.Humanoid.Health == 0 then return end
-   if k.KeyCode == Enum.KeyCode[string.upper(UseBind)] and not gpe  then
+   if k.KeyCode == Enum.KeyCode[string.upper(_G.UseBind)] and not gpe  then
         if player.Character:FindFirstChild("Stand") or player.Character:FindFirstChild("StandSuit") and rokakakarun == false then
            rokakakarun = true
            if player.Character:FindFirstChild("Rokakaka Fruit") then
