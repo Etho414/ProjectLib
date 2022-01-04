@@ -37,7 +37,8 @@ local function event4()
                if player.Character:FindFirstChild("Gift") then
                    game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                    giftused = giftused + 1
-                   repeat wait() until player.Character:WaitForChild("Humanoid").Healt > 0
+                   wait(1)
+                   repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
                     local args = {
                     [1] = "check/"..player.Name,
                     [2] = "All"
@@ -54,7 +55,8 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     giftused = giftused + 1
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Healt > 0
+                    wait(1)
+                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
                     local args = {
                     [1] = "check/"..player.Name,
                     [2] = "All"
@@ -81,7 +83,8 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     giftused = giftused + 1
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Healt > 0
+                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
+                    wait(1)
                     local args = {
                     [1] = "check/"..player.Name,
                     [2] = "All"
@@ -94,7 +97,8 @@ local function event4()
                 if player.Character:FindFirstChild("Stand Arrow") then
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Healt > 0
+                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
+                    wait(1)
                     local args = {
                     [1] = "check/"..player.Name,
                     [2] = "All"
@@ -110,7 +114,8 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Healt > 0
+                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
+                    wait(1)
                     local args = {
                     [1] = "check/"..player.Name,
                     [2] = "All"
@@ -137,7 +142,8 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Healt > 0
+                    wait(1)
+                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
                     local args = {
                     [1] = "check/"..player.Name,
                     [2] = "All"
