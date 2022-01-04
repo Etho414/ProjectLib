@@ -37,13 +37,7 @@ local function event4()
                if player.Character:FindFirstChild("Gift") then
                    game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                    giftused = giftused + 1
-                   wait(1)
-                   repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
-                    local args = {
-                    [1] = "check/"..player.Name,
-                    [2] = "All"
-                    }
-                    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+                   
                    
                elseif player.Backpack:FindFirstChild("Gift") then
                    while wait() do
@@ -55,13 +49,7 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     giftused = giftused + 1
-                    wait(1)
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
-                    local args = {
-                    [1] = "check/"..player.Name,
-                    [2] = "All"
-                    }
-                    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+                    
                else
                    
                    fireclickdetector(game:GetService("Workspace").Purchasable.Gift.ClickDetector)
@@ -83,13 +71,7 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     giftused = giftused + 1
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
-                    wait(1)
-                    local args = {
-                    [1] = "check/"..player.Name,
-                    [2] = "All"
-                    }
-                    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+                    
                end
                 giftrun = false
             elseif arrowrun == false then
@@ -97,13 +79,7 @@ local function event4()
                 if player.Character:FindFirstChild("Stand Arrow") then
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
-                    wait(1)
-                    local args = {
-                    [1] = "check/"..player.Name,
-                    [2] = "All"
-                    }
-                    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+                   
                 elseif player.Backpack:FindFirstChild("Stand Arrow") then
                     while wait() do
                         if player.Backpack:FindFirstChild("Stand Arrow") then
@@ -114,13 +90,7 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
-                    wait(1)
-                    local args = {
-                    [1] = "check/"..player.Name,
-                    [2] = "All"
-                    }
-                    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+                   
                 else
                     
                     fireclickdetector(game:GetService("Workspace").Purchasable["Stand Arrow"].ClickDetector)
@@ -142,13 +112,7 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
-                    wait(1)
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
-                    local args = {
-                    [1] = "check/"..player.Name,
-                    [2] = "All"
-                    }
-                    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+                   
                 end
                 arrowrun = false
             end 
