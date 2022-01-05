@@ -38,7 +38,9 @@ local function event4()
                    game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                    giftused = giftused + 1
                    wait(2)
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
+                   while wait() do
+                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
+                   end
                     game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
                    
                elseif player.Backpack:FindFirstChild("Gift") then
@@ -51,8 +53,10 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     giftused = giftused + 1
-                    wait(2)
-                   repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
+                    wait(2) 
+                    while wait() do
+                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
+                   end
                     game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
                else
                    
@@ -75,8 +79,10 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     giftused = giftused + 1
-                    wait(2)
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
+                    wait(2) 
+                    while wait() do
+                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
+                   end
                     game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
                end
                 giftrun = false
@@ -86,7 +92,9 @@ local function event4()
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
                     wait(2)
-                   repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
+                    while wait() do
+                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
+                   end
                     game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
                    
                 elseif player.Backpack:FindFirstChild("Stand Arrow") then
@@ -99,8 +107,10 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
-                    wait(2)
-                   repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
+                    wait(2) 
+                    while wait() do
+                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
+                   end
                     game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
 
                    
@@ -126,7 +136,9 @@ local function event4()
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
                    wait(2)
-                    repeat wait() until player.Character:WaitForChild("Humanoid").Health > 0
+                   while wait() do
+                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
+                   end
                     game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
                 end
                 arrowrun = false
