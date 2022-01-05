@@ -63,6 +63,16 @@ end
 uis.InputBegan:connect(function(k,gpe)
    local hum = player.Character:FindFirstChildOfClass("Humanoid")
    local player = game.Players.LocalPlayer
+if string.lower(_G.BuyThis) == "disc" then
+    for i = 1,10 do
+        if game:GetService("Workspace").Purchasable:FindFirstChild("Part "..i.." DISC") then
+            _G.BuyThis = "Part "..i.." DISC"
+        end
+    end
+end
+
+
+
 
    
     if player.Character.Humanoid.Health == 0 then return end
