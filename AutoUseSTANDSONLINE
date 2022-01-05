@@ -1,8 +1,8 @@
-
-
-
-
-
+if _G.GiftMode == true then
+    _G.BuyThis = "Gift"
+elseif _G.GiftMode == false then
+    _G.BuyThis = "Stand Arrow"
+end
 local uis = game:GetService("UserInputService")
 local player = game.Players.LocalPlayer
 local rokused = 0
@@ -30,117 +30,26 @@ nomoneylab.TextSize = 14.000
 nomoneylab.TextStrokeColor3 = Color3.fromRGB(255, 0, 0)
 nomoneylab.TextWrapped = true
 nomoneylab.Visible = false
+local event4ran = false
 local function event4()
+    if event4ran == true then return end
+    event4ran = true
+    
        local hum = player.Character:FindFirstChildOfClass("Humanoid")
-    if _G.GiftMode == true and giftrun == false then
-                giftrun = true
-               if player.Character:FindFirstChild("Gift") or player.Character:FindFirstChild(_G.BuyThis) then
-         
-               
-                   game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
-                   giftused = giftused + 1
-                   
-               elseif player.Backpack:FindFirstChild("Gift") or player.Backpack:FindFirstChild(_G.BuyThis) then
-                   while wait() do
-                        if player.Backpack:FindFirstChild("Gift")  then 
-                            hum:EquipTool(player.Backpack:FindFirstChild("Gift"))
-                        end
-                        if player.Backpack:FindFirstChild(_G.BuyThis) then
-                            hum:EquipTool(player.Backpack:FindFirstChild(_G.BuyThis)    
-                         end
-                         
-                        if player.Character:FindFirstChild("Gift") then break end
-                        if player.Character:FindFirstChild(_G.BuyThis) then break end
-                    end
-                    wait(eqdelay)
-                    game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
-                    giftused = giftused + 1
-               else
-                   if _G.BuyThis == "nil" then
-                   fireclickdetector(game:GetService("Workspace").Purchasable.Gift.ClickDetector)
-                   else
-                     fireclickdetector(game:GetService("Workspace").Purchasable[_G.BuyThis].ClickDetector)
-                    end
-                    local trys = 1
-                    while wait() do
-                        trys = trys + 1
-                        if trys == 200 then 
-                            nomoneylab.Text = "Error during GIFT loop maybe no money?"
-                            nomoneylab.Visible = true
-                        wait(3)
-                        nomoneylab.Visible = false
-                            break
-                        end
-                        if player.Backpack:FindFirstChild("Gift") then
-                            hum:EquipTool(player.Backpack:FindFirstChild("Gift"))
-                        end
-                        if player.Backpack:FindFirstChild(_G.BuyThis) then
-                            hum:EquipTool(player.Backpack:FindFirstChild(_G.BuyThis)    
-                         end
-                       if player.Character:FindFirstChild("Gift") then break end
-                       if player.Character:FindFirstChild(_G.BuyThis) then break end
-                    end
-                    wait(eqdelay)
-                    game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
-                    giftused = giftused + 1
-               end
-                giftrun = false
-            elseif arrowrun == false then
-                arrowrun = true
-                if player.Character:FindFirstChild("Stand Arrow") or player.Character:FindFirstChild(_G.BuyThis) then
-                    game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
-                    arrowused = arrowused + 1
-                   
-                elseif player.Backpack:FindFirstChild("Stand Arrow") or player.Backpack:FindFirstChild(_G.BuyThis)  then
-                    while wait() do
-                        if player.Backpack:FindFirstChild("Stand Arrow") then
-                            hum:EquipTool(player.Backpack:FindFirstChild("Stand Arrow"))
-                        end
-                        if player.Backpack:FindFirstChild(_G.BuyThis) then
-                            hum:EquipTool(player.Backpack:FindFirstChild(_G.BuyThis)    
-                         end
-                        if player.Character:FindFirstChild("Stand Arrow") then break end
-                        if player.Character:FindFirstChild(_G.BuyThis) then break end
-                    end
-                    wait(eqdelay)
-                    game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
-                    arrowused = arrowused + 1
+        if player.Character:FindFirstChild(_G.BuyThis) then
+            game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
+        elseif player.Backpack:FindFirstChild(_G.BuyThis) then
+            repeat wait(); hum:EquipTool(player.Backpack:FindFirstChild(_G.BuyThis)) until  player.Character:FindFirstChild(_G.BuyThis)
 
-                   
-                else
-                    
-                    if _G.BuyThis == "nil" then
-                   fireclickdetector(game:GetService("Workspace").Purchasable["Stand Arrow"].ClickDetector)
-                   else
-                     fireclickdetector(game:GetService("Workspace").Purchasable[_G.BuyThis].ClickDetector)
-                    end
-                    local trys = 1
-                    while wait() do
-                        trys = trys + 1
-                        if trys == 200 then 
-                            nomoneylab.Text = "Error during STAND ARROW loop maybe no money?"
-                            nomoneylab.Visible = true
-                        wait(3)
-                        nomoneylab.Visible = false
-                            break
-                        end
-                        if player.Backpack:FindFirstChild("Stand Arrow") then
-                            hum:EquipTool(player.Backpack:FindFirstChild("Stand Arrow"))
-                        end
-                        if player.Backpack:FindFirstChild(_G.BuyThis) then
-                            hum:EquipTool(player.Backpack:FindFirstChild(_G.BuyThis)    
-                         end
-                        if player.Character:FindFirstChild("Stand Arrow") then break end
-                        if player.Character:FindFirstChild(_G.BuyThis) then break end
-                    end
-                    wait(eqdelay)
-                    game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
-                    arrowused = arrowused + 1
-                end
-                arrowrun = false
-            end 
+            game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
+        else
+            fireclickdetector(game:GetService("Workspace").Purchasable[_G.BuyThis].ClickDetector)
+             repeat wait(); hum:EquipTool(player.Backpack:FindFirstChild(_G.BuyThis)) until  player.Character:FindFirstChild(_G.BuyThis)
 
+            game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
+        end
 
+    event4ran = false
 end
 
 function retry()
@@ -165,12 +74,8 @@ uis.InputBegan:connect(function(k,gpe)
                rokused = rokused + 1
                if _G.OneButton == true then retry   () end
            elseif player.Backpack:FindFirstChild("Rokakaka Fruit") then
-               while wait() do
-                   if player.Backpack:FindFirstChild("Rokakaka Fruit") then 
-                        hum:EquipTool(player.Backpack:FindFirstChild("Rokakaka Fruit"))
-                    end
-                    if player.Character:FindFirstChild("Rokakaka Fruit") then break end
-                end
+               hum:EquipTool(player.Backpack:FindFirstChild("Rokakaka Fruit"))
+               repeat wait() until player.Character:FindFirstChild("Rokakaka Fruit")
                 wait(eqdelay)
                 game:GetService("ReplicatedStorage").Events.Event6:InvokeServer()
                 rokused = rokused + 1
@@ -206,9 +111,6 @@ uis.InputBegan:connect(function(k,gpe)
         end
    
    end
-    if _G.CheckTimesUsed == true then
-       print("Amount of Rokakak: "..rokused)
-       print("Amount of Gifts: "..giftused)
-       print("Amount of Arrows: "..arrowused)
-    end
+    
 end)
+
