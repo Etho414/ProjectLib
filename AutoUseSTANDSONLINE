@@ -37,11 +37,6 @@ local function event4()
                if player.Character:FindFirstChild("Gift") then
                    game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                    giftused = giftused + 1
-                   wait(2)
-                   while wait() do
-                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
-                   end
-                    game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
                    
                elseif player.Backpack:FindFirstChild("Gift") then
                    while wait() do
@@ -53,11 +48,6 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     giftused = giftused + 1
-                    wait(2) 
-                    while wait() do
-                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
-                   end
-                    game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
                else
                    
                    fireclickdetector(game:GetService("Workspace").Purchasable.Gift.ClickDetector)
@@ -79,11 +69,6 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     giftused = giftused + 1
-                    wait(2) 
-                    while wait() do
-                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
-                   end
-                    game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
                end
                 giftrun = false
             elseif arrowrun == false then
@@ -91,11 +76,6 @@ local function event4()
                 if player.Character:FindFirstChild("Stand Arrow") then
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
-                    wait(2)
-                    while wait() do
-                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
-                   end
-                    game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
                    
                 elseif player.Backpack:FindFirstChild("Stand Arrow") then
                     while wait() do
@@ -107,11 +87,6 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
-                    wait(2) 
-                    while wait() do
-                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
-                   end
-                    game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
 
                    
                 else
@@ -135,11 +110,6 @@ local function event4()
                     wait(eqdelay)
                     game:GetService("ReplicatedStorage").Events.Event4:InvokeServer()
                     arrowused = arrowused + 1
-                   wait(2)
-                   while wait() do
-                       if player.Character:WaitForChild("Humanoid").Health > 0 then break end
-                   end
-                    game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("CoreGUI").Events.SummonStand:InvokeServer()
                 end
                 arrowrun = false
             end 
