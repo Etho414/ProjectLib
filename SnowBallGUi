@@ -227,7 +227,7 @@ function pickupsnow()
 end
 
 player.PlayerGui.MainUI.SnowBar.Main.Amount.Changed:connect(function()
-   if AutoSell == true and tonumber(player.PlayerGui.MainUI.SnowBar.Main.Amount.Text:split("/")[1]) == tonumber(player.PlayerGui.MainUI.SnowBar.Main.Amount.Text:split("/")[2])  then
+   if AutoSell == true and tonumber(player.PlayerGui.MainUI.SnowBar.Main.Amount.Text:split("/")[1]) >= tonumber(player.PlayerGui.MainUI.SnowBar.Main.Amount.Text:split("/")[2])  then
        sellall()
     end
 end)
