@@ -29,8 +29,6 @@ Main.Parent = ScreenGui
 Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Main.Position = UDim2.new(0.132550329, 0, 0.522304833, 0)
 Main.Size = UDim2.new(0, 150, 0, 15)
-Main.Active = true
-Main.Draggable = true
 ButBack.Name = "ButBack"
 ButBack.Parent = Main
 ButBack.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -122,7 +120,47 @@ MainLab.Text = "SnowBaller Gui"
 MainLab.TextColor3 = Color3.fromRGB(0, 0, 0)
 MainLab.TextSize = 14.000
 
+local function dragify(MainFrame)
 
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+
+	local function update(input)
+		Delta = input.Position - dragStart
+		Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + Delta.X, startPos.Y.Scale, startPos.Y.Offset + Delta.Y)
+		game:GetService("TweenService"):Create(MainFrame, TweenInfo.new(.15), {Position = Position}):Play()
+	end
+
+	MainFrame.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+			dragStart = input.Position
+			startPos = MainFrame.Position
+
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+
+	MainFrame.InputChanged:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+			dragInput = input
+		end
+	end)
+
+	game:GetService("UserInputService").InputChanged:Connect(function(input)
+		if input == dragInput and dragging then
+			update(input)
+		end
+	end)
+end
+
+dragify(Main)
 local player = game.Players.LocalPlayer
 print("Ran")
 local NameCall
