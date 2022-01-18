@@ -1,0 +1,251 @@
+local ihh = 0 
+game:GetService('Players').LocalPlayer.Idled:Connect(function() 
+    game:GetService('VirtualUser'):CaptureController()
+    wait()
+    game:GetService('VirtualUser'):ClickButton2(Vector2.new(0,0)) 
+    ihh = ihh + 1 
+    print("Times Tryed to get Kicked "..ihh) 
+end) 
+print("Anti AFK Started")
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local ButBack = Instance.new("Frame")
+local StartAutoSnow = Instance.new("TextButton")
+local SnowIndicator = Instance.new("TextLabel")
+local FieldBox = Instance.new("TextBox")
+local StartGumDrop = Instance.new("TextButton")
+local GumDropFarm = Instance.new("TextLabel")
+local StartAutoSell = Instance.new("TextButton")
+local AutoSellInd = Instance.new("TextLabel")
+local MainLab = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.Position = UDim2.new(0.132550329, 0, 0.522304833, 0)
+Main.Size = UDim2.new(0, 150, 0, 15)
+Main.Active = true
+Main.Draggable = true
+ButBack.Name = "ButBack"
+ButBack.Parent = Main
+ButBack.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ButBack.BackgroundTransparency = 1.000
+ButBack.Position = UDim2.new(0, 0, 1, 0)
+ButBack.Size = UDim2.new(0, 149, 0, 100)
+
+StartAutoSnow.Name = "StartAutoSnow"
+StartAutoSnow.Parent = ButBack
+StartAutoSnow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StartAutoSnow.Position = UDim2.new(1.02407981e-07, 0, 0, 0)
+StartAutoSnow.Size = UDim2.new(0, 150, 0, 21)
+StartAutoSnow.Font = Enum.Font.SourceSans
+StartAutoSnow.Text = "Start Auto Snow"
+StartAutoSnow.TextColor3 = Color3.fromRGB(0, 0, 0)
+StartAutoSnow.TextSize = 14.000
+StartAutoSnow.TextXAlignment = Enum.TextXAlignment.Left
+
+SnowIndicator.Name = "SnowIndicator"
+SnowIndicator.Parent = StartAutoSnow
+SnowIndicator.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+SnowIndicator.Position = UDim2.new(0.85799998, 0, 0, 0)
+SnowIndicator.Size = UDim2.new(0, 21, 0, 21)
+SnowIndicator.Font = Enum.Font.SourceSans
+SnowIndicator.Text = ""
+SnowIndicator.TextColor3 = Color3.fromRGB(0, 0, 0)
+SnowIndicator.TextSize = 14.000
+
+FieldBox.Name = "FieldBox"
+FieldBox.Parent = StartAutoSnow
+FieldBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FieldBox.Position = UDim2.new(0.713646531, 0, 0, 0)
+FieldBox.Size = UDim2.new(0, 21, 0, 21)
+FieldBox.Font = Enum.Font.SourceSans
+FieldBox.Text = "6,10"
+FieldBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+FieldBox.TextSize = 14.000
+
+StartGumDrop.Name = "StartGumDrop"
+StartGumDrop.Parent = ButBack
+StartGumDrop.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StartGumDrop.Position = UDim2.new(1.02407981e-07, 0, 0.209999993, 0)
+StartGumDrop.Size = UDim2.new(0, 150, 0, 21)
+StartGumDrop.Font = Enum.Font.SourceSans
+StartGumDrop.Text = "Start GumDrop Farm"
+StartGumDrop.TextColor3 = Color3.fromRGB(0, 0, 0)
+StartGumDrop.TextSize = 14.000
+StartGumDrop.TextXAlignment = Enum.TextXAlignment.Left
+
+GumDropFarm.Name = "GumDropFarm"
+GumDropFarm.Parent = StartGumDrop
+GumDropFarm.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+GumDropFarm.Position = UDim2.new(0.85799998, 0, 0, 0)
+GumDropFarm.Size = UDim2.new(0, 21, 0, 21)
+GumDropFarm.Font = Enum.Font.SourceSans
+GumDropFarm.Text = ""
+GumDropFarm.TextColor3 = Color3.fromRGB(0, 0, 0)
+GumDropFarm.TextSize = 14.000
+
+StartAutoSell.Name = "StartAutoSell"
+StartAutoSell.Parent = ButBack
+StartAutoSell.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+StartAutoSell.Position = UDim2.new(1.02407981e-07, 0, 0.419999987, 0)
+StartAutoSell.Size = UDim2.new(0, 150, 0, 21)
+StartAutoSell.Font = Enum.Font.SourceSans
+StartAutoSell.Text = "Start AutoSell"
+StartAutoSell.TextColor3 = Color3.fromRGB(0, 0, 0)
+StartAutoSell.TextSize = 14.000
+StartAutoSell.TextXAlignment = Enum.TextXAlignment.Left
+
+AutoSellInd.Name = "AutoSellInd"
+AutoSellInd.Parent = StartAutoSell
+AutoSellInd.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+AutoSellInd.Position = UDim2.new(0.85799998, 0, 0, 0)
+AutoSellInd.Size = UDim2.new(0, 21, 0, 21)
+AutoSellInd.Font = Enum.Font.SourceSans
+AutoSellInd.Text = ""
+AutoSellInd.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoSellInd.TextSize = 14.000
+
+MainLab.Name = "MainLab"
+MainLab.Parent = Main
+MainLab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainLab.BackgroundTransparency = 1.000
+MainLab.Position = UDim2.new(0.280000001, 0, 0, 0)
+MainLab.Size = UDim2.new(0, 3, 0, 15)
+MainLab.Font = Enum.Font.SourceSans
+MainLab.Text = "SnowBaller Gui"
+MainLab.TextColor3 = Color3.fromRGB(0, 0, 0)
+MainLab.TextSize = 14.000
+
+
+local player = game.Players.LocalPlayer
+print("Ran")
+local NameCall
+NameCall = hookmetamethod(game, "__namecall", function(self, ...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if not checkcaller() then
+        
+        if tostring(self) == "GameAnalyticsError" then
+            return
+        end
+    end
+    return NameCall(self,...)
+end)
+-- Script generated by SimpleSpy - credits to exx#9394
+
+
+
+local AutoSnow = false
+local AutoSell = false
+local AutoGum = false
+local player = game.Players.LocalPlayer
+    local function pickuppart(area,number)
+        for i,v in pairs(game.workspace.Snow:FindFirstChild(area):GetChildren()) do
+
+      wait()
+       if AutoSnow == false then
+           return
+         end
+        if player.PlayerGui.MainUI.SnowBar.Main.Amount.Text:split("/")[1] == player.PlayerGui.MainUI.SnowBar.Main.Amount.Text:split("/")[2] then
+            print("Stopped")
+            if AutoSell == true then
+                sellall()
+            elseif AutoSell == false then
+                return
+            end
+        end
+        if v.Size.Y >= 0.3 then
+             local args = {
+            [1] = "Collect",
+            [2] = {
+                ["Tile"] = v
+            }
+        }
+        
+        game:GetService("ReplicatedStorage").SpecWork.Shared.Network.CollectSnow:FireServer(unpack(args))
+        end
+       
+    end 
+     if AutoSnow == true then
+        pickuppart("Field"..number,number)
+    end
+    end
+
+local player = game.Players.LocalPlayer
+
+function pickupsnow()
+    
+    for i = tonumber(FieldBox.Text:split(",")[1]),tonumber(FieldBox.Text:split(",")[2]) do
+        coroutine.wrap(pickuppart)("Field"..i,i)
+    end
+   
+    
+end
+
+player.PlayerGui.MainUI.SnowBar.Main.Amount.Changed:connect(function()
+   if AutoSell == true and tonumber(player.PlayerGui.MainUI.SnowBar.Main.Amount.Text:split("/")[1]) == tonumber(player.PlayerGui.MainUI.SnowBar.Main.Amount.Text:split("/")[2])  then
+       sellall()
+    end
+end)
+function sellall()
+    local args = {
+        [1] = "SellSnow",
+        [2] = {
+            ["Amount"] = tonumber(player.PlayerGui.MainUI.SnowBar.Main.Amount.Text:split("/")[1])
+        }
+    }
+    
+    game:GetService("ReplicatedStorage").SpecWork.Shared.Network.Shop:InvokeServer(unpack(args))
+     
+end
+StartAutoSnow.MouseButton1Click:connect(function()
+   AutoSnow = not AutoSnow
+   if AutoSnow == true then
+
+        SnowIndicator.BackgroundColor3 = Color3.fromRGB(0,255,0)
+        
+       pickupsnow()
+   elseif AutoSnow == false then
+    
+        SnowIndicator.BackgroundColor3 = Color3.fromRGB(255)
+   end
+end)
+StartAutoSell.MouseButton1Click:connect(function()
+   AutoSell = not AutoSell
+   if AutoSell == true then
+       AutoSellInd.BackgroundColor3 = Color3.fromRGB(0,255,0)
+       
+    elseif AutoSell == false then
+       AutoSellInd.BackgroundColor3 = Color3.fromRGB(255,0,0) 
+    end
+end)
+local function AutoGum()
+    while wait(1) do
+        if AutoGum == true then
+            for i,v in pairs(game:GetService("Workspace").Gummies:GetChildren()) do 
+                if v:FindFirstChild("TouchInterest") then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Part,0)
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v.Part,1)
+                    print("Found")
+                end
+            end
+       end      
+    end
+    
+    
+end
+coroutine.wrap(AutoGum)()
+StartGumDrop.MouseButton1Click:connect(function()
+   AutoGum = not AutoGum
+   if AutoGum   == true then
+       GumDropFarm.BackgroundColor3 = Color3.fromRGB(255,0,0)
+    elseif AutoGum  == false then
+        GumDropFarm.BackgroundColor3 = Color3.fromRGB(0,255,0)
+    end
+end)
