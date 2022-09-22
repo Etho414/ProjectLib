@@ -1,31 +1,6 @@
 
 
-
-
-_G.LagServer = false
-_G.CanAttackDisabler = true 
-
--- Tp Gui
-_G.ToggleGUIKey =  "RightShift"
--- Flying Speed
-
-_G.FlySpeed = 10
-
--- ESP Settings
-_G.EspKey = "G"
-_G.ShowHp = true -- Shows HP On ESP
-_G.UsePercentage = true -- Shows it in percentages
-_G.ShowLifeForce = true
-
-
---[[
-Server Lag Script :P
-Game:GetService("RunService").RenderStepped:Connect(function()
-     fireproximityprompt(workspace.Capture.CapturePart.ProximityPrompt)
-end)
-
-
-]]
+-- Oh hi there :D:D
 
 local Ver = "Text"
 local NameOfExe,ExeVer = identifyexecutor()
