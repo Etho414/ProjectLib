@@ -1,9 +1,4 @@
 
-if not game:IsLoaded() then
-    game.Loaded:Wait()
-end
-if game.GameId ~= 3785125742 then while wait() do end end 
-
 
 
 
