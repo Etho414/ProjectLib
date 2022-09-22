@@ -146,7 +146,7 @@ function CreateBPCounter()
 
 
      local player = game.Players.LocalPlayer
-     local config = player.Character.Config
+     local config = player.Character:WaitForChild("Config")
 
      local ScreenGui = Instance.new("ScreenGui")
      local Frame = Instance.new("Frame")
